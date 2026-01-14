@@ -1,5 +1,5 @@
 from flask import Flask, render_template_string, request, jsonify
-import PyPDF2
+import pypdf
 import io
 import re
 import os
@@ -1034,7 +1034,7 @@ def upload():
     
     try:
         # Read PDF
-        pdf_reader = PyPDF2.PdfReader(io.BytesIO(file.read()))
+        pdf_reader = pypdf.PdfReader(io.BytesIO(file.read()))
         
         # Extract text from all pages
         text = ''
